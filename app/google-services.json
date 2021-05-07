@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "1045313055051",
+    "firebase_url": "https://dianacosmetics-b7229-default-rtdb.firebaseio.com",
+    "project_id": "dianacosmetics-b7229",
+    "storage_bucket": "dianacosmetics-b7229.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045313055051:android:6d4f9357bfc2bdd1a360ce",
+        "android_client_info": {
+          "package_name": "com.example.cosmeticsstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1045313055051-p4hb9se93pmp9r8ed013asb748m5vo8o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwV2u0LyPdftfaCsAXIiQtmliqBAZ8K8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1045313055051-p4hb9se93pmp9r8ed013asb748m5vo8o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045313055051:android:88c53f25f72ae9a4a360ce",
+        "android_client_info": {
+          "package_name": "com.mad2021june.dianacosmetics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1045313055051-p4hb9se93pmp9r8ed013asb748m5vo8o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwV2u0LyPdftfaCsAXIiQtmliqBAZ8K8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1045313055051-p4hb9se93pmp9r8ed013asb748m5vo8o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
