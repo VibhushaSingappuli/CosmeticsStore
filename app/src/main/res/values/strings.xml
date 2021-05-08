@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">DianaCosmetics</string>
+    <string name="Addenquiry">Add Enquiry</string>
+    <string name="Email">Email</string>
+    <string name="addEmail">Add Email</string>
+    <string name="message">Message</string>
+    <string name="enterMessage">Enter Message</string>
+    <string name="send">Send</string>
+    <string name="EnqManagement">Manage Enquires</string>
+    <string name="enquiry">Enquiry</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="lblNullValue" />
+    <string name="btnReply">Reply</string>
+    <string name="lblMyEnquires">My Enquires</string>
+    <string name="adding">Add</string>
 </resources>
