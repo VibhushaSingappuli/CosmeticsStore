@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/welcome"
+    android:background="@drawable/mainback"
     tools:context=".MainActivity">
 
     <ImageView
@@ -13,9 +13,8 @@
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/applogo"
-    />
+        android:layout_marginTop="100dp"
+        android:src="@drawable/applogo" />
 
     <TextView
         android:id="@+id/app_slogan"
@@ -23,11 +22,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="161dp"
-        android:layout_marginEnd="88dp"
-        android:text="Find, Discover, Choose and Buy Saloon Product"
-        android:textColor="@color/white"
-        android:textSize="22sp"
+        android:layout_marginHorizontal="95dp"
+        android:layout_marginTop="262dp"
+        android:layout_marginEnd="95dp"
+        android:text="Find,
+        Discover, Choose and Buy Saloon Product"
+        android:textAlignment="center"
+        android:textColor="@color/purple_500"
+        android:textSize="28sp"
         android:textStyle="bold|italic" />
 
     <Button

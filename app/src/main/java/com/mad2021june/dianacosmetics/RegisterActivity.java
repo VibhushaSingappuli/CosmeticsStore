@@ -42,10 +42,9 @@ public class RegisterActivity extends AppCompatActivity {
 
         CreateAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onClick(View v)
+            {
                 CreateAccount();
-
             }
         });
 
