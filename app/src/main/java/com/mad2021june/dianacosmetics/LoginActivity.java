@@ -47,8 +47,6 @@ public class LoginActivity extends AppCompatActivity {
         loadingBar = new ProgressDialog(this);
 
 
-
-
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
@@ -136,7 +134,7 @@ public class LoginActivity extends AppCompatActivity {
                                Toast.makeText(LoginActivity.this, "Logging in Successfully..", Toast.LENGTH_SHORT).show();
                                loadingBar.dismiss();
 
-                               Intent intent = new Intent(LoginActivity.this, LoginActivity.class);
+                               Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                startActivity(intent);
                            }
                         }
