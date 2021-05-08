@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".AdminAddNewProductActivity">
 
 
@@ -85,7 +86,7 @@
         android:cropToPadding="false"
         android:layout_marginTop="15dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/add"
+        android:src="@drawable/select_product_image"
         android:layout_centerHorizontal="true"
     />
 
@@ -94,14 +95,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/select_product_image"
-        android:text="SAVE"
         android:layout_marginLeft="80dp"
+        android:layout_marginTop="34dp"
         android:layout_marginRight="80dp"
+        android:background="@drawable/buttons"
         android:padding="17dp"
-        android:layout_marginTop="10dp"
-        android:textSize="18sp"
+        android:text="SAVE"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
-        android:background="@drawable/buttons"
-        />
+        android:textSize="18sp" />
 </RelativeLayout>
