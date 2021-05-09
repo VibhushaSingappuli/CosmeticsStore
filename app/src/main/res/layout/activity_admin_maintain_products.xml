@@ -75,7 +75,22 @@
             android:padding="12dp"
             android:layout_margin="5dp"
             android:background="@drawable/buttons"
-            android:textColor="@color/design_default_color_primary_dark"/>
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/delete_product_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/apply_changes_btn"
+            android:hint="Delete This Product"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:padding="12dp"
+            android:layout_margin="40dp"
+            android:background="@drawable/buttons"
+            android:textColor="@android:color/white"
+
+            />
 
     </RelativeLayout>
 
