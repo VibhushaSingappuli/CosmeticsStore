@@ -24,7 +24,7 @@ public class AdminCategoryActivity extends AppCompatActivity {
         AdminEnquires.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);// viraj
+                Intent intent = new Intent(AdminCategoryActivity.this, EnqAdminView.class);//
                 startActivity(intent);
             }
         });
