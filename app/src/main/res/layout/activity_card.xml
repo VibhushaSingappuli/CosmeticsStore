@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Payment.Card">
+
+    <TextView
+        android:id="@+id/card"
+        android:layout_width="326dp"
+        android:layout_height="82dp"
+        android:text="Card Information"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="42sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/account"
+        android:layout_width="303dp"
+        android:layout_height="51dp"
+        android:background="#FFFFFF"
+        android:hint="Account Number"
+        android:textAlignment="center"
+        android:importantForAutofill="no"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        tools:ignore="MissingConstraints,TextFields" />
+
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="305dp"
+        android:layout_height="56dp"
+        android:background="#FFFFFF"
+        android:hint="Holder Name"
+        android:textAlignment="center"
+        android:importantForAutofill="no"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.367"
+        tools:ignore="MissingConstraints,TextFields" />
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="306dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="28dp"
+        android:background="#FFFFFF"
+        android:textAlignment="center"
+        android:hint="Expiry Date"
+        android:importantForAutofill="no"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/cvc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,TextFields" />
+
+    <EditText
+        android:id="@+id/cvc"
+        android:layout_width="301dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="52dp"
+        android:background="#FFFFFF"
+        android:hint="CVC"
+        android:textAlignment="center"
+        android:importantForAutofill="no"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.652"
+        tools:ignore="MissingConstraints,TextFields" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="318dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="160dp"
+        android:background="@drawable/buttons"
+        android:text="Pay Now"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="137dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="72dp"
+        android:textColor="@color/white"
+        android:background="@drawable/buttons"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:text="Update"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.197"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="137dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="76dp"
+        android:textColor="@color/white"
+        android:background="@drawable/buttons"
+        android:text="Delete"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.802"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
