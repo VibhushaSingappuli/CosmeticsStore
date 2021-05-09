@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class AdminCategoryActivity extends AppCompatActivity {
 
-    private Button LogoutBtn,AddProduct,EditProduct;
+    private Button LogoutBtn,AddProduct,EditProduct,AdminEnquires;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,16 @@ public class AdminCategoryActivity extends AppCompatActivity {
         LogoutBtn = (Button) findViewById(R.id.logout_btn);
         AddProduct = (Button) findViewById(R.id.add_product_btn);
         EditProduct = (Button) findViewById(R.id.edit_product_btn);
+        AdminEnquires = (Button) findViewById(R.id.admin_enquires_btn);
+
+        AdminEnquires.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductActivity.class);// viraj
+                startActivity(intent);
+            }
+        });
+
 
         LogoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
