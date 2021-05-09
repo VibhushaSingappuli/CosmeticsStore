@@ -67,4 +67,6 @@
     <string name="reply">Reply</string>
     <string name="email">Email:</string>
     <string name="message">Message:</string>
+    <string name="Delete">Delete</string>
+    <string name="Update">Update</string>
 </resources>
