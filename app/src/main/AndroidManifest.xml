@@ -10,15 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DianaCosmetics">
 
-        <activity android:name=".EnqAdminView" />
+        <activity android:name=".EnqAdminView" >
+
+
+        </activity>
         <activity android:name=".EnqUpdate" />
-        <activity android:name=".EnqList" />
+        <activity android:name=".EnqList" >
+
+        </activity>
         <activity android:name=".EnqInsertData" />
 
         <activity android:name=".AdminMaintainProductsActivity"></activity>
         <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".AdminCategoryActivity" />
-        
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
