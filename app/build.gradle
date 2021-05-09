@@ -53,4 +53,7 @@ dependencies {
 
     //Add Dependencies
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation'com.cepheuen.elegant-number-button:lib:1.0.2'
+
+
 }
