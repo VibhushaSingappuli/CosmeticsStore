@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DianaCosmetics">
-       
+
         <activity android:name=".EnqAdminView" />
         <activity android:name=".EnqUpdate" />
         <activity android:name=".EnqList" />
