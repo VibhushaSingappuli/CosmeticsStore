@@ -8,13 +8,37 @@
     android:background="@drawable/background"
     tools:context=".AdminCategoryActivity">
 
+
+    <ImageView
+        android:id="@+id/login_applogo"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:src="@drawable/applogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        />
+
+    <Button
+        android:id="@+id/admin_enquires_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/login_applogo"
+        android:background="@drawable/buttons"
+        android:text="Enquire Handling"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        />
+
+
     <Button
         android:id="@+id/add_product_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/edit_product_btn"
+        android:layout_below="@+id/admin_enquires_btn"
         android:layout_margin="20dp"
-        android:background="@color/design_default_color_primary_dark"
+        android:background="@drawable/buttons"
         android:text="ADD PRODUCT"
         android:textColor="@color/white"
         android:textSize="20dp"
@@ -24,9 +48,9 @@
         android:id="@+id/edit_product_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/logout_btn"
+        android:layout_below="@+id/add_product_btn"
         android:layout_margin="20dp"
-        android:background="@color/design_default_color_primary_dark"
+        android:background="@drawable/buttons"
         android:text="EDIT PRODUCT"
         android:textColor="@color/white"
         android:textSize="20dp"
@@ -37,9 +61,9 @@
         android:id="@+id/logout_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/edit_product_btn"
         android:layout_margin="20dp"
-        android:background="@color/design_default_color_primary_dark"
+        android:background="@drawable/buttons"
         android:text="Logout"
         android:textColor="@color/white"
         android:textSize="20dp"
