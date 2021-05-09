@@ -61,9 +61,10 @@
     <string name="enterName">Enter your Email</string>
     <string name="enterMessage">Enter your message</string>
     <string name="e_mail">E-mail:</string>
-    <string name="message">Message:</string>
     <string name="add">Add</string>
     <string name="save">Save</string>
     <string name="title_activity_main2">MainActivity</string>
     <string name="reply">Reply</string>
+    <string name="email">Email:</string>
+    <string name="message">Message:</string>
 </resources>
