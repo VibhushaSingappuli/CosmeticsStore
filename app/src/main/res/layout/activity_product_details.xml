@@ -69,6 +69,20 @@
 
     </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
 
+    <Button
+        android:id="@+id/pd_add_to_cart_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="33dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Add to Cart"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
 
 
 
