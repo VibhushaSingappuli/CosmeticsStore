@@ -68,5 +68,80 @@ public class CartActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
 
-}
+        super.onStart();
+
+        final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
+
+        FirebaseRecyclerOptions<Cart> options = new FirebaseRecyclerOptions.Builder<Cart>()
+                .setQuery(cartListRef.child("User View")
+                        .child( Prevalent.currentOnlineUser.getPhone()).child("Products"), Cart.class)
+                .build();
+
+        FirebaseRecyclerAdapter<Cart, CartViewHolder> adapter = new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull CartViewHolder holder, int i, @NonNull Cart cart) {
+                holder.txtProductQty.setText("Quantity = "+cart.getQuantity());
+                holder.txtProductPrice.setText("Price "+ cart.getPrice() + "LKR");
+                holder.txtProductName.setText(cart.getPname());
+
+                //Commit Video 26
+                double oneTypeProductPrice = ((Double.valueOf( cart.getPrice() ))) * Double .valueOf( cart.getQuantity() );
+                overTotalPrice = overTotalPrice + oneTypeProductPrice;
+
+
+                //Edit Delete Commit
+                holder.itemView.setOnClickListener( new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        CharSequence options[] = new CharSequence[]{
+                                "Edit",
+                                "Delete"
+
+                        };
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder( CartActivity.this);
+                        builder.setTitle( "Cart Options: " );
+
+                        builder.setItems( options, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                if(which == 0){
+                                    Intent intent = new Intent(CartActivity.this,ProductDetailsActivity.class);
+                                    intent.putExtra( "pid",cart.getPid() );
+                                    startActivity( intent );
+                                }
+
+                                if(which == 1){
+                                    cartListRef.child( "User View" )
+                                            .child( Prevalent.currentOnlineUser.getPhone() )
+                                            .child( "Products" )
+                                            .child( cart.getPid() )
+                                            .removeValue()
+                                            .addOnCompleteListener( new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if(task.isSuccessful()){
+                                                        Toast.makeText( CartActivity.this,"Item removed successfully",Toast.LENGTH_SHORT).show();
+
+                                                        Intent intent = new Intent(CartActivity.this,HomeActivity.class);
+                                                        startActivity( intent );
+                                                    }
+
+                                                }
+                                            } );
+
+                                }
+
+                            }
+                        } );
+                        builder.show();
+                    }
+                } );
+
+            }
+
