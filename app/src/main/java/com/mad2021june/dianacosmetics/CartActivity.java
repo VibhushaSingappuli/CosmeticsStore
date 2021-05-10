@@ -23,6 +23,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mad2021june.dianacosmetics.Model.Cart;
+import com.mad2021june.dianacosmetics.Payment.YourDetails;
 import com.mad2021june.dianacosmetics.Prevalent.Prevalent;
 import com.mad2021june.dianacosmetics.ViewHolder.CartViewHolder;
 
@@ -33,7 +34,7 @@ public class CartActivity extends AppCompatActivity {
     private Button nextProcessBtn;
     private TextView txtTotalPrice;
 
-    //Commit video 26
+    //Overall
     private double overTotalPrice = 0;
 
     @Override
@@ -49,16 +50,15 @@ public class CartActivity extends AppCompatActivity {
         nextProcessBtn =(Button) findViewById(R.id.nextBtn);
         txtTotalPrice =(TextView) findViewById(R.id.totalPriceView);
 
-        // Check Changes
-        //txtTotalPrice.setText(Double.toString(overTotalPrice));
+
 
         nextProcessBtn.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 txtTotalPrice.setText("Total Price =  LKR" + String.valueOf( overTotalPrice ));
-                //You should be changed
-                Intent intent = new Intent(CartActivity.this ,HomeActivity.class);
+                //To direct your Details activity
+                Intent intent = new Intent(CartActivity.this , YourDetails.class);
                 intent.putExtra( "Total Price " , String.valueOf( overTotalPrice ) );
                 startActivity( intent );
                 finish();
@@ -87,7 +87,7 @@ public class CartActivity extends AppCompatActivity {
                 holder.txtProductPrice.setText("Price "+ cart.getPrice() + "LKR");
                 holder.txtProductName.setText(cart.getPname());
 
-                //Commit Video 26
+                //Calculations
                 double oneTypeProductPrice = ((Double.valueOf( cart.getPrice() ))) * Double .valueOf( cart.getQuantity() );
                 overTotalPrice = overTotalPrice + oneTypeProductPrice;
 
