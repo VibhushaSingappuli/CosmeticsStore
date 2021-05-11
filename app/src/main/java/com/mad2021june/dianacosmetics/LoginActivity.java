@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mad2021june.dianacosmetics.Model.Users;
 import com.mad2021june.dianacosmetics.Prevalent.Prevalent;
+import com.rey.material.widget.CheckBox;
 
 import io.paperdb.Paper;
 
@@ -33,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private String parentDbName = "Users";
 
+    private CheckBox chkBoxRememberme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,8 @@ public class LoginActivity extends AppCompatActivity {
         NotAdminLink = (TextView) findViewById(R.id.not_admin_panel_link);
         loadingBar = new ProgressDialog(this);
 
+        chkBoxRememberme = (CheckBox)  findViewById( R.id.remember_me_chk);
+        Paper.init( this );
 
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                 LoginUser();
             }
         });
+
         AdminLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,7 +99,6 @@ public class LoginActivity extends AppCompatActivity {
             loadingBar.show();
 
             //primary key
-
             AllowAccessToAccount(phone, password);
 
         }
@@ -103,6 +106,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private void AllowAccessToAccount(String phone, String password)
     {
+        if(chkBoxRememberme.isChecked())
+        {
+            Paper.book().write( Prevalent.UserPhoneKey , phone );
+            Paper.book().write( Prevalent.UserPasswordKey,password );
+        }
 
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
@@ -125,12 +133,12 @@ public class LoginActivity extends AppCompatActivity {
                            {
                                Toast.makeText(LoginActivity.this, "Welcome Admin your Logging in Successfully..", Toast.LENGTH_SHORT).show();
                                loadingBar.dismiss();
-
-                               Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
+                               //Just for now later changed to home
+                               Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                startActivity(intent);
                            }
-                           else if (parentDbName.equals("Users"))
-                           {
+                          else if (parentDbName.equals("Users"))
+                          {
                                Toast.makeText(LoginActivity.this, "Logging in Successfully..", Toast.LENGTH_SHORT).show();
                                loadingBar.dismiss();
 

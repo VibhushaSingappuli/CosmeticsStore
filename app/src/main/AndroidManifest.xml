@@ -9,23 +9,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        tools:replace="android:theme"
-        android:theme="@style/Theme.DianaCosmetics">
-
-        <activity android:name=".EnqAdminView" >
-
-
-        </activity>
+        android:theme="@style/Theme.DianaCosmetics"
+        tools:replace="android:theme">
+        <activity android:name=".EnqAdminView"></activity>
         <activity android:name=".EnqUpdate" />
-        <activity android:name=".EnqList" >
-
-        </activity>
+        <activity android:name=".EnqList"></activity>
         <activity android:name=".EnqInsertData" />
-
-        <activity android:name=".AdminMaintainProductsActivity"></activity>
+        <activity android:name=".AdminMaintainProductsActivity" />
         <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".AdminCategoryActivity" />
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,7 +34,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".AdminAddNewProductActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />

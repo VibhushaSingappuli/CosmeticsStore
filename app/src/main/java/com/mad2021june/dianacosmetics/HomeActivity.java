@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -32,17 +33,26 @@ import io.paperdb.Paper;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
+    //ADD THIS LINE AFTER NAVIGATION
+    //
+    //NOT TESTED
     private DatabaseReference ProductsRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
 
     private String type = "" ;
 
+    //NOT TESTED F
+
+    //private Button LogoutButton;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_home );
 
+        //NOT TESTED
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         if (bundle != null)
@@ -54,10 +64,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         Paper.init(this);
 
-        Toolbar toolbar = findViewById( R.id.toolbar );
+       Toolbar toolbar = findViewById( R.id.toolbar );
         //Change1
-        toolbar.setTitle( "Home" );
-        setSupportActionBar( toolbar );
+       toolbar.setTitle( "Home" );
+       setSupportActionBar( toolbar );
 
         FloatingActionButton fab = findViewById( R.id.fab );
         fab.setOnClickListener( new View.OnClickListener() {
@@ -83,6 +93,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         recyclerView.setLayoutManager(layoutManager);
 
     }
+
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -107,7 +119,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                             @Override
                             public void onClick(View v)
                             {
-                                if (type.equals("Admin"))
+                                if(type.equals("Admin"))
                                 {
                                     Intent intent = new Intent(HomeActivity.this, AdminMaintainProductsActivity.class);
                                     intent.putExtra("pid", model.getPid());
@@ -137,6 +149,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -147,12 +160,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate( R.menu.home, menu );
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
@@ -206,5 +221,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    //NOT TESTED F
 
 }

@@ -48,7 +48,7 @@ public class CartActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         nextProcessBtn =(Button) findViewById(R.id.nextBtn);
-        txtTotalPrice =(TextView) findViewById(R.id.totalPriceView);
+        //txtTotalPrice =(TextView) findViewById(R.id.totalPriceView);
 
 
 
@@ -72,18 +72,19 @@ public class CartActivity extends AppCompatActivity {
     protected void onStart() {
 
         super.onStart();
+        String user = Prevalent.currentOnlineUser.getPhone();
 
-        final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
+        final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List").child("User View")
+                .child( user).child("Products");
 
         FirebaseRecyclerOptions<Cart> options = new FirebaseRecyclerOptions.Builder<Cart>()
-                .setQuery(cartListRef.child("User View")
-                        .child( Prevalent.currentOnlineUser.getPhone()).child("Products"), Cart.class)
+                .setQuery(cartListRef, Cart.class)
                 .build();
 
         FirebaseRecyclerAdapter<Cart, CartViewHolder> adapter = new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull CartViewHolder holder, int i, @NonNull Cart cart) {
-                holder.txtProductQty.setText("Quantity = "+cart.getQuantity());
+                holder.txtProductQty.setText("Quantity = "+ cart.getQuantity());
                 holder.txtProductPrice.setText("Price "+ cart.getPrice() + "LKR");
                 holder.txtProductName.setText(cart.getPname());
 

@@ -80,7 +80,10 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
     }
+
+
     //primary key
+
     private void validatephoneNumber(String name, String phone, String password)
     {
         final DatabaseReference RootRef;

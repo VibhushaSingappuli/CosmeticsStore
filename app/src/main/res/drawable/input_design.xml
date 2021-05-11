@@ -3,10 +3,9 @@
 
     <stroke
 
-        android:color="@color/design_default_color_primary_dark"
+        android:color="@color/colorPrimaryDark"
         android:width="3dp"
         >
-
     </stroke>
 
     <corners

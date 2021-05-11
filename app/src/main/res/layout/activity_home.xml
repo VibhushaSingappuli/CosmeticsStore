@@ -8,6 +8,8 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
+    <!-- I changed layout from DrawerLayout-->
+
     <include
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
@@ -29,4 +31,18 @@
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
 
+
+<!--
+    <Button
+        android:id="@+id/sample_logout_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="334dp"
+        android:layout_marginBottom="349dp"
+        android:text="Logout" />
+
+        -->
 </androidx.drawerlayout.widget.DrawerLayout>

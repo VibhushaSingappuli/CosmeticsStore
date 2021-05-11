@@ -30,13 +30,14 @@ import java.util.HashMap;
 
 public class ProductDetailsActivity extends AppCompatActivity
 {
-
     private ImageView productImage;
     private TextView productPrice,productDescription,productName;
     private String productID = "";
+    public String cartID;
 
     private Button addToCartBtn;
     private ElegantNumberButton qtyBtn;
+
 
 
     @Override
@@ -63,7 +64,13 @@ public class ProductDetailsActivity extends AppCompatActivity
             }
         } );
 
+
+
+
+
+
     }
+
 
     private void addingToCartList() {
         String saveCurrentDate,saveCurrentTime;
@@ -76,10 +83,13 @@ public class ProductDetailsActivity extends AppCompatActivity
         SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
         saveCurrentTime = currentDate.format( calForDate.getTime() );
 
-        final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child( "Cart List" );
+        final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child( "CartList" );
+
+        cartID = cartListRef.push().getKey();
 
         final HashMap<String,Object> cartMap = new HashMap<>();
         cartMap.put( "pid",productID );
+        cartMap.put( "cid",cartID );
         cartMap.put( "pname",productName.getText().toString() );
         cartMap.put( "price",productPrice.getText().toString()  );
         cartMap.put( "date",saveCurrentDate);
@@ -87,16 +97,16 @@ public class ProductDetailsActivity extends AppCompatActivity
         cartMap.put( "qty",qtyBtn.getNumber());
         cartMap.put( "discount","");
 
-        cartListRef.child( "User View" ).child( Prevalent.currentOnlineUser.getPhone())
+        cartListRef.child(cartID).child( "User View" ).child( Prevalent.currentOnlineUser.getPhone())
                 .child( "Products" ).child( productID )
-                .updateChildren( cartMap )
+                .setValue( cartMap )
                 .addOnCompleteListener( new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            cartListRef.child( "Admin View" ).child( Prevalent.currentOnlineUser.getPhone())
+                            cartListRef.child(cartID).child( "Admin View" ).child( Prevalent.currentOnlineUser.getPhone())
                                     .child( "Products" ).child( productID )
-                                    .updateChildren( cartMap )
+                                    .setValue( cartMap )
                                     .addOnCompleteListener( new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
@@ -117,7 +127,6 @@ public class ProductDetailsActivity extends AppCompatActivity
 
 
     }
-
     private void getProductDetails(String productID)
     {
         DatabaseReference productsRef = FirebaseDatabase.getInstance().getReference().child("Products");
